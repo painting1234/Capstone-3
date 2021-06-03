@@ -1,0 +1,21 @@
+Model Metrics for Predicting Electricity Demand 24-hours ahead using Time-Series Models
+
+Models explored: ARIMA, ARIMAX, and Facebook Prophet model. 
+The focus is on ARIMAX.
+
+Parameters:
+model = SARIMAX(y, exog, order=(4,1,3), enforce_stationarity=False)
+-y is the electricity demand timeseries.
+-The "exog" argument is forecasted temperature data.
+-The order parameters were chosen using lowest BIC value for "AR" & "MA", and KPSS test for "I".
+
+Metrics:
+Model forecast accuracy was assessed with Mean Absolute Percentage Error (MAPE).
+MAPE = 0.0781355930219362
+
+MAPE is assessed across 20 separate 24-hour forecasts. The training sets and 24-hour forecast horizons were all randomly chosen using TimeSeriesSplit().
+
+
+
+
+
